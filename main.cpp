@@ -6,9 +6,6 @@
  */
 
 #include <iostream>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
 #include "CamFeed.h"
 #include "Viewer.h"
 #include "TargetDetector.h"
@@ -23,7 +20,7 @@ int main(int argc, char** argv) {
     
     if (!cam.isOpened())
     {
-        cerr << "Error opening capture!" << endl;
+        cerr << "Error opening capture device/file!" << endl;
         return 1;
     }
     

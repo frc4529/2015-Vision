@@ -12,7 +12,6 @@
 using namespace std;
 
 TargetDetector::TargetDetector(Mat &_image) : image(_image) {
-
 }
 
 
@@ -22,6 +21,7 @@ void TargetDetector::prepareImage() {
 }
 
 void TargetDetector::findContours() {
+    // Clear old data out
     for (vector<vector<Point> >::iterator it = contours.begin(); it != contours.end(); ++it)
         it->clear();
     contours.clear();
@@ -29,7 +29,11 @@ void TargetDetector::findContours() {
         it->clear();
     validContours.clear();
     hierarchy.clear();
+    
+    // Find contours
     cv::findContours(image, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+    
+    // Decimate polygons
     for (int i = 0; i < contours.size(); ++i)
         approxPolyDP(contours[i], contours[i], 6, true);
 }
