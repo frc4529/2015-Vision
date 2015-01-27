@@ -30,6 +30,9 @@ int main(int argc, char** argv) {
     
     for (;;) {
         cam >> viewer;
+        if (!viewer.data)
+            return 0;
+        
         viewerA = viewer.clone();
         detector.prepareImage();
         detector.findContours();

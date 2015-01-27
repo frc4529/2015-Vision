@@ -4,4 +4,16 @@
         <activeConfTypeElem>1</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.cpp</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.cpp</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.h</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/main.cpp</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.cpp</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.h</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.h</file>
+        </group>
+    </open-files>
 </project-private>
