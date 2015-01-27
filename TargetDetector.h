@@ -12,6 +12,23 @@
 
 using namespace cv;
 
+struct LinePair {
+    vector<Point>::iterator ptr;
+    int length;
+    
+    LinePair() : length(0) {}
+    LinePair(const LinePair& other) : ptr(other.ptr), length(other.length) {}
+    
+    LinePair(vector<Point>::iterator ptr, Point offset) : ptr(ptr), length(offset.dot(offset)) {}
+    LinePair(vector<Point>::iterator ptr, int length) : ptr(ptr), length(length) {}
+
+    bool operator> (const LinePair& rhs) const {return length > rhs.length;}
+    bool operator> (const int& rhs) const {return length > rhs;}
+    bool operator< (const LinePair& rhs) const {return length < rhs.length;}
+    bool operator< (const int& rhs) const {return length < rhs;}
+
+};
+
 class TargetDetector {
 public:
     TargetDetector(Mat &_image);

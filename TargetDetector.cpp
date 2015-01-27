@@ -14,7 +14,6 @@ using namespace std;
 TargetDetector::TargetDetector(Mat &_image) : image(_image) {
 }
 
-
 void TargetDetector::prepareImage() {
     cvtColor(image, image, CV_BGR2GRAY);
     threshold(image, image, 234, 256, THRESH_BINARY);
@@ -41,6 +40,8 @@ void TargetDetector::findContours() {
 Mat TargetDetector::filterContours() {
     Mat out(image.rows, image.cols, CV_8UC3, Scalar::all(0));
     int numFound = 0;
+    std::stringstream ss;
+    
     if (!contours.empty() && !hierarchy.empty())
     {
         for (int idx = 0; idx >= 0; idx = hierarchy[idx][0])
@@ -91,11 +92,15 @@ Mat TargetDetector::filterContours() {
 
         if (numFound == 2)
         {
+            int widths[3];
+            bool firstWidth = true;
             for (vector<vector<Point> >::iterator it = validContours.begin(); it != validContours.end(); ++it)
             {
                 vector<Point> contour = *it;
                 Point tl = contour[0], br = contour[0];
                 vector<Vec4i> horizontalPnts;
+                LinePair lines[2];
+                int currLineIndex = 2;
                 for (vector<Point>::iterator it1 = contour.begin(); it1 != contour.end(); ++it1)
                 {
                     Point pntA = *it1, pntB = *(it1 + 1 == contour.end() ? contour.begin() : it1 + 1);
@@ -109,7 +114,9 @@ Mat TargetDetector::filterContours() {
                         line(out, pntA, pntB, Scalar::all(255), 2);
                         //cout << angBetween << endl;
                         Point offset = pntB - pntA;
-                        cout << sqrt(offset.dot(offset)) << endl;
+                        //cout << "Offset: " << sqrt(offset.dot(offset)) << endl;
+                        if (currLineIndex != 0)
+                            lines[--currLineIndex] = LinePair(it1, offset.dot(offset));
                     }
 
                     if (tl.x > it1->x)
@@ -122,10 +129,46 @@ Mat TargetDetector::filterContours() {
                     else if (br.y < it1->y)
                         br.y = it1->y;
                 }
+                LinePair smallestLine(lines[0]), largestLine(lines[0]);
+                if (lines[1] > lines[0])
+                    largestLine = lines[1];
+                else
+                    smallestLine = lines[1];
+                
                 Point center = (tl + br) * 0.5;
                 Rect bounds(tl, br);
+                if (firstWidth)
+                {
+                    widths[0] = bounds.x;
+                    widths[1] = bounds.width;
+                    widths[2] = center.y;
+                    firstWidth = false;
+                }
+                else
+                {
+                    
+                    if (abs(widths[1] - bounds.width) > 3)
+                    {
+                        Scalar textColor;
+                        ss.str("");
+                        if (widths[0] < bounds.x ^ widths[1] < bounds.width)
+                        {
+                            ss << "ROTATED ANTI-CLOCKWISE";
+                            textColor = Scalar(255, 255, 0);
+                        }
+                        else
+                        {
+                            ss << "ROTATED CLOCKWISE";
+                            textColor = Scalar(0, 255, 255);
+                        }
+                        putText(out, ss.str(), Point(2, 12), FONT_HERSHEY_PLAIN, 1, textColor, 1);
+                    }
+                }
                 rectangle(out, bounds, Scalar::all(127));
-                line(out, tl, center, Scalar::all(255));
+                if (smallestLine.ptr->x < largestLine.ptr->x)
+                    line(out, tl, center, Scalar::all(255));
+                else
+                    line(out, Point(br.x, tl.y), center, Scalar::all(255));
                 //int dist = bounds.;
                 //Point closestPoint = 
 
@@ -138,7 +181,6 @@ Mat TargetDetector::filterContours() {
         for (int j = 0; j < contours.at(i).size(); ++j)
             rectangle(out, Rect(contours[i][j].x, contours[i][j].y, 2, 2), Scalar::all(255));
     
-    std::stringstream ss;
     if (numFound != 0 && numFound != 2)
     {
         ss.str("");
