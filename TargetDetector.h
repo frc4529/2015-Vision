@@ -13,21 +13,22 @@
 using namespace cv;
 
 struct LinePair {
-    vector<Point>::iterator ptr;
-    int length;
-    
-    LinePair() : length(0) {}
-    LinePair(const LinePair& other) : ptr(other.ptr), length(other.length) {}
-    
-    LinePair(vector<Point>::iterator ptr, Point offset) : ptr(ptr), length(offset.dot(offset)) {}
-    LinePair(vector<Point>::iterator ptr, int length) : ptr(ptr), length(length) {}
-
-    bool operator> (const LinePair& rhs) const {return length > rhs.length;}
-    bool operator> (const int& rhs) const {return length > rhs;}
-    bool operator< (const LinePair& rhs) const {return length < rhs.length;}
-    bool operator< (const int& rhs) const {return length < rhs;}
-
+    int length, xPos;
 };
+
+enum rotation_t {
+    NONE,
+    CLOCKWISE,
+    ANTICLOCKWISE
+};
+
+typedef struct LineResult {
+    bool isProcessed, isGood;
+    float xPos;
+    int width;
+    rotation_t rotation;
+    
+} LineResult;
 
 class TargetDetector {
 public:
@@ -35,12 +36,15 @@ public:
     virtual ~TargetDetector();
     void prepareImage();
     void findContours();
-    Mat filterContours();
+    bool filterContours();
+    LineResult getContours();
     
 private:
     Mat &image;
     vector<vector<Point> > contours, validContours;
     vector<Vec4i> hierarchy;
+    LineResult result;
+    bool shouldFilterContours;
 
 };
 

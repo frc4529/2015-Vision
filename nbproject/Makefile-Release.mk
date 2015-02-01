@@ -55,7 +55,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=`pkg-config --libs opencv`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -68,22 +68,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opencv2: ${OBJECTFILES}
 ${OBJECTDIR}/_ext/1398269351/CamFeed.o: /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1398269351
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/CamFeed.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/CamFeed.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.cpp
 
 ${OBJECTDIR}/_ext/1398269351/TargetDetector.o: /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1398269351
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/TargetDetector.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/TargetDetector.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.cpp
 
 ${OBJECTDIR}/_ext/1398269351/Viewer.o: /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1398269351
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/Viewer.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/Viewer.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

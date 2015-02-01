@@ -11,7 +11,8 @@
 
 using namespace std;
 
-TargetDetector::TargetDetector(Mat &_image) : image(_image) {
+TargetDetector::TargetDetector(Mat &_image) : image(_image), shouldFilterContours(false) {
+    result.isProcessed = false;
 }
 
 void TargetDetector::prepareImage() {
@@ -20,6 +21,7 @@ void TargetDetector::prepareImage() {
 }
 
 void TargetDetector::findContours() {
+    result.isProcessed = false;
     // Clear old data out
     for (vector<vector<Point> >::iterator it = contours.begin(); it != contours.end(); ++it)
         it->clear();
@@ -33,30 +35,31 @@ void TargetDetector::findContours() {
     cv::findContours(image, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
     
     // Decimate polygons
-    for (int i = 0; i < contours.size(); ++i)
+    for (unsigned int i = 0; i < contours.size(); ++i)
         approxPolyDP(contours[i], contours[i], 6, true);
+    
+    shouldFilterContours = true;
 }
 
-Mat TargetDetector::filterContours() {
-    Mat out(image.rows, image.cols, CV_8UC3, Scalar::all(0));
+bool TargetDetector::filterContours() {
+    if (!shouldFilterContours)
+        return false;
+    
+    shouldFilterContours = false;
     int numFound = 0;
-    std::stringstream ss;
     
     if (!contours.empty() && !hierarchy.empty())
     {
         for (int idx = 0; idx >= 0; idx = hierarchy[idx][0])
         {
             if (hierarchy[idx][3] != -1)
-            {
-                cout << "Hole" << endl;
                 continue;
-            }
-            if (contours.at(idx).size() != 6)
+            else if (contours.at(idx).size() != 6)
                 continue;
 
             int anglesFound = 0;
 
-            for (int i = 0; i < contours.at(idx).size(); ++i)
+            for (unsigned int i = 0; i < contours.at(idx).size(); ++i)
             {
                 Point pntBefore = contours.at(idx).at((i - 1) % contours.at(idx).size());
                 Point pntMid = contours.at(idx).at(i);
@@ -70,124 +73,93 @@ Mat TargetDetector::filterContours() {
                 if (angBetween >= CV_PI)
                     angBetween = (CV_PI * 2) - angBetween;
 
-                //cout << line1Ang << " -> " << line2Ang << " -> " << angBetween << endl;
-
                 if (angBetween > CV_PI / 3 && angBetween < CV_PI * 2 / 3)
-                {
                     anglesFound++;
-                    //cout << line1Ang << " -> " << line2Ang << " -> " << angBetween << endl;
-                }
             }
-            Scalar color( rand()&255, rand()&255, rand()&255 );
-            int drawType = CV_FILLED;
             if (anglesFound != 5)
                 continue;
-                //drawType = 2;
             else
                 validContours.push_back(contours.at(idx));
-
-            drawContours(out, contours, idx, color, drawType, 8, hierarchy);
         }
         numFound = validContours.size();
 
-        if (numFound == 2)
-        {
-            int widths[3];
-            bool firstWidth = true;
-            for (vector<vector<Point> >::iterator it = validContours.begin(); it != validContours.end(); ++it)
-            {
-                vector<Point> contour = *it;
-                Point tl = contour[0], br = contour[0];
-                vector<Vec4i> horizontalPnts;
-                LinePair lines[2];
-                int currLineIndex = 2;
-                for (vector<Point>::iterator it1 = contour.begin(); it1 != contour.end(); ++it1)
-                {
-                    Point pntA = *it1, pntB = *(it1 + 1 == contour.end() ? contour.begin() : it1 + 1);
-                    double angBetween = fabs(atan2(pntB.y - pntA.y, pntB.x - pntA.x));
-
-                    if (angBetween > CV_PI / 2)
-                        angBetween = CV_PI - angBetween;
-
-                    if (angBetween > CV_PI / 6)
-                    {
-                        line(out, pntA, pntB, Scalar::all(255), 2);
-                        //cout << angBetween << endl;
-                        Point offset = pntB - pntA;
-                        //cout << "Offset: " << sqrt(offset.dot(offset)) << endl;
-                        if (currLineIndex != 0)
-                            lines[--currLineIndex] = LinePair(it1, offset.dot(offset));
-                    }
-
-                    if (tl.x > it1->x)
-                        tl.x = it1->x;
-                    else if (br.x < it1->x)
-                        br.x = it1->x;
-
-                    if (tl.y > it1->y)
-                        tl.y = it1->y;
-                    else if (br.y < it1->y)
-                        br.y = it1->y;
-                }
-                LinePair smallestLine(lines[0]), largestLine(lines[0]);
-                if (lines[1] > lines[0])
-                    largestLine = lines[1];
-                else
-                    smallestLine = lines[1];
-                
-                Point center = (tl + br) * 0.5;
-                Rect bounds(tl, br);
-                if (firstWidth)
-                {
-                    widths[0] = bounds.x;
-                    widths[1] = bounds.width;
-                    widths[2] = center.y;
-                    firstWidth = false;
-                }
-                else
-                {
-                    
-                    if (abs(widths[1] - bounds.width) > 3)
-                    {
-                        Scalar textColor;
-                        ss.str("");
-                        if (widths[0] < bounds.x ^ widths[1] < bounds.width)
-                        {
-                            ss << "ROTATED ANTI-CLOCKWISE";
-                            textColor = Scalar(255, 255, 0);
-                        }
-                        else
-                        {
-                            ss << "ROTATED CLOCKWISE";
-                            textColor = Scalar(0, 255, 255);
-                        }
-                        putText(out, ss.str(), Point(2, 12), FONT_HERSHEY_PLAIN, 1, textColor, 1);
-                    }
-                }
-                rectangle(out, bounds, Scalar::all(127));
-                if (smallestLine.ptr->x < largestLine.ptr->x)
-                    line(out, tl, center, Scalar::all(255));
-                else
-                    line(out, Point(br.x, tl.y), center, Scalar::all(255));
-                //int dist = bounds.;
-                //Point closestPoint = 
-
-                //cout << (double) bounds.height / bounds.width << endl;
-            }
-        }
-
     }
-    for (int i = 0; i < contours.size(); ++i)
-        for (int j = 0; j < contours.at(i).size(); ++j)
-            rectangle(out, Rect(contours[i][j].x, contours[i][j].y, 2, 2), Scalar::all(255));
+    result.isProcessed = false;
+    result.isGood = numFound == 2;
+    return result.isGood;
+}
+
+LineResult TargetDetector::getContours()
+{
+    if (result.isProcessed || !result.isGood)
+        return result;
     
-    if (numFound != 0 && numFound != 2)
+    result.isProcessed = true;
+    
+    int widths[2];
+    bool firstWidth = true;
+    int minX, maxX;
+    for (vector<vector<Point> >::iterator it = validContours.begin(); it != validContours.end(); ++it)
     {
-        ss.str("");
-        ss << "WARNING: ONLY " << numFound << " POLYGONS FOUND!";
-        putText(out, ss.str(), Point(2, 26), FONT_HERSHEY_PLAIN, 1, Scalar(0, 0, 255), 1);
+        vector<Point> contour = *it;
+        int minXContour = contour[0].x, maxXContour = contour[0].x;
+        LinePair lines[2];
+        int currLineIndex = 2;
+        for (vector<Point>::iterator it1 = contour.begin(); it1 != contour.end(); ++it1)
+        {
+            Point pntA = *it1, pntB = *(it1 + 1 == contour.end() ? contour.begin() : it1 + 1);
+            double angBetween = fabs(atan2(pntB.y - pntA.y, pntB.x - pntA.x));
+
+            if (angBetween > CV_PI / 2)
+                angBetween = CV_PI - angBetween;
+
+            if (angBetween > CV_PI / 6)
+            {
+                Point offset = pntB - pntA;
+                if (currLineIndex != 0)
+                {
+                    lines[--currLineIndex].length = offset.dot(offset);
+                    lines[currLineIndex].xPos = offset.x;
+                }
+            }
+
+            if (minXContour > it1->x)
+                minXContour = it1->x;
+            else if (maxXContour < it1->x)
+                maxXContour = it1->x;
+        }
+        LinePair smallestLine(lines[0]), largestLine(lines[0]);
+        if (lines[1].length > lines[0].length)
+            largestLine = lines[1];
+        else
+            smallestLine = lines[1];
+        
+        if (firstWidth)
+        {
+            widths[0] = minXContour;
+            widths[1] = maxXContour - minXContour;
+            minX = minXContour;
+            maxX = maxXContour;
+            firstWidth = false;
+        }
+        else
+        {
+            if (minX > minXContour)
+                minX = minXContour;
+            if (maxX < maxXContour)
+                maxX = maxXContour;
+            
+            if (abs(widths[1] - (maxXContour - minXContour)) <= 3)
+                result.rotation = NONE;
+            else if ((widths[0] < minXContour) ^ (widths[1] < (maxXContour - minXContour)))
+                result.rotation = ANTICLOCKWISE;
+            else
+                result.rotation = CLOCKWISE;
+        }
     }
-    return out;
+    result.xPos = (float)(minX + maxX - image.cols) / 2;
+    result.width = maxX - minX;
+    return result;
 }
 
 

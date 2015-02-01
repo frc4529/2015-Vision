@@ -99,6 +99,11 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>`pkg-config --libs opencv`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.cpp"
             ex="false"

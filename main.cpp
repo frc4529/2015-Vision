@@ -15,7 +15,7 @@ using namespace std;
 /*
  * 
  */
-int main(int argc, char** argv) {
+int main() {
     CamFeed cam;
     
     if (!cam.isOpened())
@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
         return 1;
     }
     
-    Viewer viewer, viewerA("out1"), viewerB("out2");
+    Viewer viewer, viewerA("out1");
     
     TargetDetector detector(viewerA);
     
@@ -36,12 +36,29 @@ int main(int argc, char** argv) {
         viewerA = viewer.clone();
         detector.prepareImage();
         detector.findContours();
-        viewerB = detector.filterContours();
-        
+        if (detector.filterContours())
+        {
+            LineResult detectionResult = detector.getContours();
+            cout << "Is good: " << detectionResult.isGood << endl;
+            cout << "X pos: " << detectionResult.xPos << ", Width: " << detectionResult.width << ", Rotation: ";
+            switch (detectionResult.rotation)
+            {
+                case NONE:
+                    cout << "NONE";
+                    break;
+                case CLOCKWISE:
+                    cout << "CLOCKWISE";
+                    break;
+                case ANTICLOCKWISE:
+                    cout << "ANTICLOCKWISE";
+                    break;
+            }
+            cout << endl;
+        }
         
         viewer.update();
         viewerA.update();
-        viewerB.update();
+        
         
         switch(cv::waitKey(100/3))
         {
