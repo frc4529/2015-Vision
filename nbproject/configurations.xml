@@ -7,6 +7,7 @@
       <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.h</itemPath>
       <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.h</itemPath>
       <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.h</itemPath>
+      <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -18,6 +19,7 @@
       <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.cpp</itemPath>
       <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.cpp</itemPath>
       <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.cpp</itemPath>
+      <itemPath>/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -77,6 +79,16 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -131,6 +143,16 @@
             flavor2="0">
       </item>
       <item path="/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.h"
             ex="false"
             tool="3"
             flavor2="0">

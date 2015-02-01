@@ -16,10 +16,14 @@ struct LinePair {
     int length, xPos;
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum rotation_t {
-    NONE,
-    CLOCKWISE,
-    ANTICLOCKWISE
+NONE,
+CLOCKWISE,
+ANTICLOCKWISE
 };
 
 typedef struct LineResult {
@@ -29,6 +33,10 @@ typedef struct LineResult {
     rotation_t rotation;
     
 } LineResult;
+
+#ifdef __cplusplus
+}
+#endif
 
 class TargetDetector {
 public:

@@ -9,7 +9,9 @@
         <group>
             <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.cpp</file>
             <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.cpp</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.h</file>
             <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/TargetDetector.h</file>
+            <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.cpp</file>
             <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/main.cpp</file>
             <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.cpp</file>
             <file>file:/home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/CamFeed.h</file>

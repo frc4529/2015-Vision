@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/1398269351/CamFeed.o \
 	${OBJECTDIR}/_ext/1398269351/TargetDetector.o \
 	${OBJECTDIR}/_ext/1398269351/Viewer.o \
+	${OBJECTDIR}/_ext/1398269351/VisionLib.o \
 	${OBJECTDIR}/main.o
 
 
@@ -79,6 +80,11 @@ ${OBJECTDIR}/_ext/1398269351/Viewer.o: /home/silvea/Documents/Robotics/2015/Open
 	${MKDIR} -p ${OBJECTDIR}/_ext/1398269351
 	${RM} "$@.d"
 	$(COMPILE.cc) -g `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/Viewer.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/Viewer.cpp
+
+${OBJECTDIR}/_ext/1398269351/VisionLib.o: /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1398269351
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1398269351/VisionLib.o /home/silvea/Documents/Robotics/2015/OpenCV/OpenCV2/VisionLib.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
