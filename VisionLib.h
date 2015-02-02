@@ -11,17 +11,18 @@
 #include "CamFeed.h"
 #include "TargetDetector.h"
 
-
-typedef struct instanceStore {
+class instanceStore {
+public:
+    instanceStore(CamFeed * cam);
+    virtual ~instanceStore();
     CamFeed & feed;
-    TargetDetector * detector;
     Mat imageStore;
-} instanceStore;
+    TargetDetector * detector;
+};
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
     instanceStore * initCamera();
     LineResult processFrame(instanceStore *);
     void closeCamera(instanceStore *);

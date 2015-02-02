@@ -15,7 +15,7 @@ using namespace std;
 /*
  * 
  */
-int main() {
+int mainOld() {
     CamFeed cam;
     
     if (!cam.isOpened())

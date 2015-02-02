@@ -3,15 +3,13 @@
 
 instanceStore * initCamera()
 {
-    instanceStore * store;
-    store->feed = CamFeed();
-    if (!store->feed.isOpened())
+    CamFeed * feed = new CamFeed();
+    if (!feed->isOpened())
     {
-        delete &(store->feed);
-        delete store;
+        delete feed;
         return NULL;
     }
-    store->detector = new TargetDetector(store->imageStore);
+    return new instanceStore(feed);
 }
 
 LineResult processFrame(instanceStore * store)
@@ -29,6 +27,7 @@ LineResult processFrame(instanceStore * store)
     if (!store->imageStore.data)
     {
         LineResult result;
+        result.isProcessed = false;
         result.isGood = false;
         return result;
     }
@@ -51,8 +50,18 @@ void closeCamera(instanceStore * store)
 {
     if (store == NULL)
         return;
-    
-    delete store->detector;
-    delete &(store->feed);
+
     delete store;
+}
+
+instanceStore::instanceStore(CamFeed * cam) : feed(*cam)
+{
+    imageStore.create(240, 320, 0);
+    detector = new TargetDetector(imageStore);
+}
+
+instanceStore::~instanceStore()
+{
+    delete detector;
+    delete &feed;
 }

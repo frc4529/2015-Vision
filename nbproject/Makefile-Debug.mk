@@ -39,7 +39,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/1398269351/TargetDetector.o \
 	${OBJECTDIR}/_ext/1398269351/Viewer.o \
 	${OBJECTDIR}/_ext/1398269351/VisionLib.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/test.o
 
 
 # C Compiler Flags
@@ -90,6 +91,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/test.o: test.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test.o test.cpp
 
 # Subprojects
 .build-subprojects:

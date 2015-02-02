@@ -13,6 +13,7 @@ using namespace std;
 
 TargetDetector::TargetDetector(Mat &_image) : image(_image), shouldFilterContours(false) {
     result.isProcessed = false;
+    result.isGood = false;
 }
 
 void TargetDetector::prepareImage() {
