@@ -18,7 +18,7 @@ LineResult processFrame(instanceStore * store)
     if (store == NULL)
     {
         LineResult result;
-        result.isGood = false;
+        result.isProcessed = false;
         return result;
     }
     
@@ -28,7 +28,6 @@ LineResult processFrame(instanceStore * store)
     {
         LineResult result;
         result.isProcessed = false;
-        result.isGood = false;
         return result;
     }
     
@@ -41,6 +40,7 @@ LineResult processFrame(instanceStore * store)
     else
     {
         LineResult result;
+        result.isProcessed = true;
         result.isGood = false;
         return result;
     }
