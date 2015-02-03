@@ -66,10 +66,10 @@ bool TargetDetector::filterContours() {
                 Point pntMid = contours.at(idx).at(i);
                 Point pntAfter = contours.at(idx).at((i + 1) % contours.at(idx).size());
 
-                double line1Ang = atan2(pntBefore.y - pntMid.y, pntBefore.x - pntMid.x);
-                double line2Ang = atan2(pntAfter.y - pntMid.y, pntAfter.x - pntMid.x);
+                float line1Ang = atan2(pntBefore.y - pntMid.y, pntBefore.x - pntMid.x);
+                float line2Ang = atan2(pntAfter.y - pntMid.y, pntAfter.x - pntMid.x);
 
-                double angBetween = fabs(line1Ang - line2Ang);
+                float angBetween = fabs(line1Ang - line2Ang);
 
                 if (angBetween >= CV_PI)
                     angBetween = (CV_PI * 2) - angBetween;
@@ -109,7 +109,7 @@ LineResult TargetDetector::getContours()
         for (vector<Point>::iterator it1 = contour.begin(); it1 != contour.end(); ++it1)
         {
             Point pntA = *it1, pntB = *(it1 + 1 == contour.end() ? contour.begin() : it1 + 1);
-            double angBetween = fabs(atan2(pntB.y - pntA.y, pntB.x - pntA.x));
+            float angBetween = fabs(atan2(pntB.y - pntA.y, pntB.x - pntA.x));
 
             if (angBetween > CV_PI / 2)
                 angBetween = CV_PI - angBetween;
