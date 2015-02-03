@@ -15,14 +15,9 @@ using namespace cv;
 
 class CamFeed : public VideoCapture {
 public:
-    CamFeed();
+    CamFeed(const char * feedPath);
+    CamFeed(int camIndex);
     virtual ~CamFeed();
-    int getFrameCount() const;
-    
-private:
-#if !LIVE_FEED
-    int frameCount;
-#endif
 };
 
 #endif	/* CAMFEED_H */

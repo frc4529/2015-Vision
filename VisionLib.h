@@ -23,7 +23,8 @@ public:
 #ifdef __cplusplus
 extern "C" {
 #endif
-    instanceStore * initCamera();
+    instanceStore * initFeed(const char * feedPath);
+    instanceStore * initCamera(int camIndex);
     LineResult processFrame(instanceStore *);
     void closeCamera(instanceStore *);
 

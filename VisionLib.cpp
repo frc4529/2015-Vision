@@ -1,9 +1,20 @@
 #include "VisionLib.h"
 #include "Viewer.h"
 
-instanceStore * initCamera()
+instanceStore * initFeed(const char * feedPath)
 {
-    CamFeed * feed = new CamFeed();
+    CamFeed * feed = new CamFeed(feedPath);
+    if (!feed->isOpened())
+    {
+        delete feed;
+        return NULL;
+    }
+    return new instanceStore(feed);
+}
+
+instanceStore * initCamera(int camIndex)
+{
+    CamFeed * feed = new CamFeed(camIndex);
     if (!feed->isOpened())
     {
         delete feed;

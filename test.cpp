@@ -12,7 +12,8 @@ using namespace std;
 } LineResult;*/
 
 int main() {
-	instanceStore * store = initCamera();
+	//instanceStore * store = initCamera(0);
+	instanceStore * store = initFeed("/home/silvea/Documents/Robotics/2015/OpenCV/sampleVideo/out.flv");
 	LineResult result = processFrame(store);
 	while (result.isProcessed)
 	{

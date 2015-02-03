@@ -13,28 +13,20 @@
 #define FEED_PATH "/home/silvea/Documents/Robotics/2015/OpenCV/sampleVideo/out.flv"
 #endif
 
-CamFeed::CamFeed() : VideoCapture(FEED_PATH) {
-    
-#if LIVE_FEED
-    set(CV_CAP_PROP_FRAME_WIDTH, 320);
-    set(CV_CAP_PROP_FRAME_HEIGHT, 240);
-    set(CV_CAP_PROP_FPS, 30);
-#else
-    frameCount = get(CV_CAP_PROP_FRAME_COUNT);
-#endif
+CamFeed::CamFeed(const char * feedPath) : VideoCapture(feedPath) {
+	set(CV_CAP_PROP_FRAME_WIDTH, 320);
+	set(CV_CAP_PROP_FRAME_HEIGHT, 240);
+	set(CV_CAP_PROP_FPS, 30);
 }
 
-int CamFeed::getFrameCount() const {
-#if LIVE_FEED
-    return -1;
-#else
-    return frameCount;
-#endif
+CamFeed::CamFeed(int camIndex) : VideoCapture(camIndex) {
+	set(CV_CAP_PROP_FRAME_WIDTH, 320);
+	set(CV_CAP_PROP_FRAME_HEIGHT, 240);
+	set(CV_CAP_PROP_FPS, 30);
 }
-
 
 CamFeed::~CamFeed() {
-    if (isOpened())
-        release();
+	if (isOpened())
+		release();
 }
 
