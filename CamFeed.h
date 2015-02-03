@@ -7,7 +7,6 @@
 
 #ifndef CAMFEED_H
 #define	CAMFEED_H
-#define LIVE_FEED false
 
 #include <opencv2/highgui/highgui.hpp>
 

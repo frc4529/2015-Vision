@@ -7,12 +7,6 @@
 
 #include "CamFeed.h"
 
-#if LIVE_FEED
-#define FEED_PATH 0
-#else
-#define FEED_PATH "/home/silvea/Documents/Robotics/2015/OpenCV/sampleVideo/out.flv"
-#endif
-
 CamFeed::CamFeed(const char * feedPath) : VideoCapture(feedPath) {
 	set(CV_CAP_PROP_FRAME_WIDTH, 320);
 	set(CV_CAP_PROP_FRAME_HEIGHT, 240);
@@ -29,4 +23,3 @@ CamFeed::~CamFeed() {
 	if (isOpened())
 		release();
 }
-
