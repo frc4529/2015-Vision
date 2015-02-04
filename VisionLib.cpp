@@ -1,7 +1,7 @@
 #include "VisionLib.h"
 #include "Viewer.h"
 
-instanceStore * initFeed(const char * feedPath)
+InstanceStore * initFeed(const char * feedPath)
 {
     CamFeed * feed = new CamFeed(feedPath);
     if (!feed->isOpened())
@@ -9,10 +9,10 @@ instanceStore * initFeed(const char * feedPath)
         delete feed;
         return NULL;
     }
-    return new instanceStore(feed);
+    return new InstanceStore(feed);
 }
 
-instanceStore * initCamera(int camIndex)
+InstanceStore * initCamera(int camIndex)
 {
     CamFeed * feed = new CamFeed(camIndex);
     if (!feed->isOpened())
@@ -20,10 +20,10 @@ instanceStore * initCamera(int camIndex)
         delete feed;
         return NULL;
     }
-    return new instanceStore(feed);
+    return new InstanceStore(feed);
 }
 
-LineResult processFrame(instanceStore * store)
+LineResult processFrame(InstanceStore * store)
 {
     
     if (store == NULL)
@@ -57,7 +57,7 @@ LineResult processFrame(instanceStore * store)
     }
 }
 
-void closeCamera(instanceStore * store)
+void closeCamera(InstanceStore * store)
 {
     if (store == NULL)
         return;
@@ -65,13 +65,13 @@ void closeCamera(instanceStore * store)
     delete store;
 }
 
-instanceStore::instanceStore(CamFeed * cam) : feed(*cam)
+InstanceStore::InstanceStore(CamFeed * cam) : feed(*cam)
 {
     imageStore.create(240, 320, 0);
     detector = new TargetDetector(imageStore);
 }
 
-instanceStore::~instanceStore()
+InstanceStore::~InstanceStore()
 {
     delete detector;
     delete &feed;

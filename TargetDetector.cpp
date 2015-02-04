@@ -110,7 +110,7 @@ LineResult TargetDetector::getContours()
         vector<Point> contour = *it;
         int minXContour = contour[0].x, maxXContour = contour[0].x;
         // We only need to compare 2 veritcal lines for height to get orientation
-        LinePair lines[2];
+        LineDetails lines[2];
         int currLineIndex = 2;
         for (vector<Point>::iterator it1 = contour.begin(); it1 != contour.end(); ++it1)
         {
@@ -137,7 +137,7 @@ LineResult TargetDetector::getContours()
         }
 
 
-        LinePair smallestLine(lines[0]), largestLine(lines[0]);
+        LineDetails smallestLine(lines[0]), largestLine(lines[0]);
         if (lines[1].length > lines[0].length)
             largestLine = lines[1];
         else
