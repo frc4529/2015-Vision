@@ -1,0 +1,57 @@
+\hypertarget{TargetDetector_8h}{}\section{Target\+Detector.\+h File Reference}
+\label{TargetDetector_8h}\index{Target\+Detector.\+h@{Target\+Detector.\+h}}
+
+
+Main vision processing code.  
+
+
+{\ttfamily \#include $<$opencv2/imgproc/imgproc.\+hpp$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLineDetails}{Line\+Details}
+\begin{DoxyCompactList}\small\item\em For comparison of lines. \end{DoxyCompactList}\item 
+struct \hyperlink{structLineResult}{Line\+Result}
+\begin{DoxyCompactList}\small\item\em Result returned from \hyperlink{classTargetDetector_a4e0da3406dc29ce871dbfbb233a5ab5c}{Target\+Detector\+::get\+Contours()} \end{DoxyCompactList}\item 
+class \hyperlink{classTargetDetector}{Target\+Detector}
+\begin{DoxyCompactList}\small\item\em Vision processing/target acquisition code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{TargetDetector_8h_ac10fe7fc8989be0fdc2d4f50de25a346}{}typedef struct \hyperlink{structLineResult}{Line\+Result} \hyperlink{TargetDetector_8h_ac10fe7fc8989be0fdc2d4f50de25a346}{Line\+Result}\label{TargetDetector_8h_ac10fe7fc8989be0fdc2d4f50de25a346}
+
+\begin{DoxyCompactList}\small\item\em Result returned from \hyperlink{classTargetDetector_a4e0da3406dc29ce871dbfbb233a5ab5c}{Target\+Detector\+::get\+Contours()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{TargetDetector_8h_af89160be273160865e8cd55ebc682736}{rotation\+\_\+t} \{ \hyperlink{TargetDetector_8h_af89160be273160865e8cd55ebc682736a5c33a14784ab1d58c4c9c881b36b94c7}{A\+N\+T\+I\+C\+L\+O\+C\+K\+W\+I\+S\+E} = -\/1, 
+\hyperlink{TargetDetector_8h_af89160be273160865e8cd55ebc682736ac157bdf0b85a40d2619cbc8bc1ae5fe2}{N\+O\+N\+E} = 0, 
+\hyperlink{TargetDetector_8h_af89160be273160865e8cd55ebc682736a436e34ac11f92a71ed5b0c06a6cba180}{C\+L\+O\+C\+K\+W\+I\+S\+E} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Rotation direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main vision processing code. 
+
+Processes frame data and finds the target in the given frame. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{TargetDetector_8h_af89160be273160865e8cd55ebc682736}{}\index{Target\+Detector.\+h@{Target\+Detector.\+h}!rotation\+\_\+t@{rotation\+\_\+t}}
+\index{rotation\+\_\+t@{rotation\+\_\+t}!Target\+Detector.\+h@{Target\+Detector.\+h}}
+\subsubsection[{rotation\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf rotation\+\_\+t}}\label{TargetDetector_8h_af89160be273160865e8cd55ebc682736}
+
+
+Rotation direction. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+N\+T\+I\+C\+L\+O\+C\+K\+W\+I\+S\+E@{A\+N\+T\+I\+C\+L\+O\+C\+K\+W\+I\+S\+E}!Target\+Detector.\+h@{Target\+Detector.\+h}}\index{Target\+Detector.\+h@{Target\+Detector.\+h}!A\+N\+T\+I\+C\+L\+O\+C\+K\+W\+I\+S\+E@{A\+N\+T\+I\+C\+L\+O\+C\+K\+W\+I\+S\+E}}\item[{\em 
+\hypertarget{TargetDetector_8h_af89160be273160865e8cd55ebc682736a5c33a14784ab1d58c4c9c881b36b94c7}{}A\+N\+T\+I\+C\+L\+O\+C\+K\+W\+I\+S\+E\label{TargetDetector_8h_af89160be273160865e8cd55ebc682736a5c33a14784ab1d58c4c9c881b36b94c7}
+}]Rotated anticlockwise. \index{N\+O\+N\+E@{N\+O\+N\+E}!Target\+Detector.\+h@{Target\+Detector.\+h}}\index{Target\+Detector.\+h@{Target\+Detector.\+h}!N\+O\+N\+E@{N\+O\+N\+E}}\item[{\em 
+\hypertarget{TargetDetector_8h_af89160be273160865e8cd55ebc682736ac157bdf0b85a40d2619cbc8bc1ae5fe2}{}N\+O\+N\+E\label{TargetDetector_8h_af89160be273160865e8cd55ebc682736ac157bdf0b85a40d2619cbc8bc1ae5fe2}
+}]Not rotated. \index{C\+L\+O\+C\+K\+W\+I\+S\+E@{C\+L\+O\+C\+K\+W\+I\+S\+E}!Target\+Detector.\+h@{Target\+Detector.\+h}}\index{Target\+Detector.\+h@{Target\+Detector.\+h}!C\+L\+O\+C\+K\+W\+I\+S\+E@{C\+L\+O\+C\+K\+W\+I\+S\+E}}\item[{\em 
+\hypertarget{TargetDetector_8h_af89160be273160865e8cd55ebc682736a436e34ac11f92a71ed5b0c06a6cba180}{}C\+L\+O\+C\+K\+W\+I\+S\+E\label{TargetDetector_8h_af89160be273160865e8cd55ebc682736a436e34ac11f92a71ed5b0c06a6cba180}
+}]Rotated clockwise. \end{description}
+\end{Desc}

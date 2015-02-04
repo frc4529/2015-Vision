@@ -1,0 +1,92 @@
+\hypertarget{classCamFeed}{}\section{Cam\+Feed Class Reference}
+\label{classCamFeed}\index{Cam\+Feed@{Cam\+Feed}}
+
+
+Camera/\+U\+R\+I feed.  
+
+
+
+
+{\ttfamily \#include $<$Cam\+Feed.\+h$>$}
+
+Inheritance diagram for Cam\+Feed\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCamFeed}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamFeed_a31a519a9156f7e666e1907a535e35dc4}{Cam\+Feed} (const char $\ast$feed\+Path)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCamFeed}{Cam\+Feed} U\+R\+I constructor. \end{DoxyCompactList}\item 
+\hyperlink{classCamFeed_a9caf95eba6da1dcbc95e138168486423}{Cam\+Feed} (int cam\+Index)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCamFeed}{Cam\+Feed} U\+S\+B camera constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCamFeed_a2c03e00ea668e2f6b70cfcc91853ff84}{$\sim$\+Cam\+Feed} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCamFeed}{Cam\+Feed} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Camera/\+U\+R\+I feed. 
+
+Provides a camera source. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCamFeed_a31a519a9156f7e666e1907a535e35dc4}{}\index{Cam\+Feed@{Cam\+Feed}!Cam\+Feed@{Cam\+Feed}}
+\index{Cam\+Feed@{Cam\+Feed}!Cam\+Feed@{Cam\+Feed}}
+\subsubsection[{Cam\+Feed}]{\setlength{\rightskip}{0pt plus 5cm}Cam\+Feed\+::\+Cam\+Feed (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{feed\+Path}
+\end{DoxyParamCaption}
+)}\label{classCamFeed_a31a519a9156f7e666e1907a535e35dc4}
+
+
+\hyperlink{classCamFeed}{Cam\+Feed} U\+R\+I constructor. 
+
+Opens up the \hyperlink{classCamFeed}{Cam\+Feed} for capture from a specified file path or U\+R\+I. 
+\begin{DoxyParams}{Parameters}
+{\em feed\+Path} & U\+R\+I/full path of the input file/\+U\+R\+I/ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For a axis I\+P camera, try using\+: 
+\begin{DoxyCode}
+http:\textcolor{comment}{//<USERNAME>:<PASSWORD>@<IP>:<PORT>/axis-cgi/mjpg/video.cgi?resolution=320x240&fps=30&compression=25}
+\end{DoxyCode}
+ 
+
+See section 2 of \href{http://www.axis.com/files/manuals/vapix_video_streaming_52937_en_1307.pdf}{\tt http\+://www.\+axis.\+com/files/manuals/vapix\+\_\+video\+\_\+streaming\+\_\+52937\+\_\+en\+\_\+1307.\+pdf} for details. 
+\end{DoxyNote}
+\hypertarget{classCamFeed_a9caf95eba6da1dcbc95e138168486423}{}\index{Cam\+Feed@{Cam\+Feed}!Cam\+Feed@{Cam\+Feed}}
+\index{Cam\+Feed@{Cam\+Feed}!Cam\+Feed@{Cam\+Feed}}
+\subsubsection[{Cam\+Feed}]{\setlength{\rightskip}{0pt plus 5cm}Cam\+Feed\+::\+Cam\+Feed (
+\begin{DoxyParamCaption}
+\item[{int}]{cam\+Index}
+\end{DoxyParamCaption}
+)}\label{classCamFeed_a9caf95eba6da1dcbc95e138168486423}
+
+
+\hyperlink{classCamFeed}{Cam\+Feed} U\+S\+B camera constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam\+Index} & Index of /dev/video\+X for camera to use. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamFeed_a2c03e00ea668e2f6b70cfcc91853ff84}{}\index{Cam\+Feed@{Cam\+Feed}!````~Cam\+Feed@{$\sim$\+Cam\+Feed}}
+\index{````~Cam\+Feed@{$\sim$\+Cam\+Feed}!Cam\+Feed@{Cam\+Feed}}
+\subsubsection[{$\sim$\+Cam\+Feed}]{\setlength{\rightskip}{0pt plus 5cm}Cam\+Feed\+::$\sim$\+Cam\+Feed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classCamFeed_a2c03e00ea668e2f6b70cfcc91853ff84}
+
+
+\hyperlink{classCamFeed}{Cam\+Feed} destructor. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CamFeed_8h}{Cam\+Feed.\+h}\item 
+Cam\+Feed.\+cpp\end{DoxyCompactItemize}

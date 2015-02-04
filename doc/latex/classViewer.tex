@@ -1,0 +1,114 @@
+\hypertarget{classViewer}{}\section{Viewer Class Reference}
+\label{classViewer}\index{Viewer@{Viewer}}
+
+
+\hyperlink{classViewer}{Viewer} class.  
+
+
+
+
+{\ttfamily \#include $<$Viewer.\+h$>$}
+
+Inheritance diagram for Viewer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classViewer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classViewer_aaedebacb31cba87de6e7d448ed8d6586}{Viewer} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classViewer}{Viewer} constructor. \end{DoxyCompactList}\item 
+\hyperlink{classViewer_af90638063a06dff8f3b020b272216aaf}{Viewer} (std\+::string win\+Name)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classViewer}{Viewer} constructor with window name. \end{DoxyCompactList}\item 
+\hyperlink{classViewer_a41ffe49f44a4f8fe52cec93c69273ada}{Viewer} (const Mat \&orig, std\+::string win\+Name)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classViewer}{Viewer} constructor with reference cv\+::\+Mat and window name. \end{DoxyCompactList}\item 
+\hypertarget{classViewer_a324e5a6a1532fe5eac3f3b0e4792b2da}{}virtual \hyperlink{classViewer_a324e5a6a1532fe5eac3f3b0e4792b2da}{$\sim$\+Viewer} ()\label{classViewer_a324e5a6a1532fe5eac3f3b0e4792b2da}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classViewer}{Viewer} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classViewer_a7122ce13ef7b396ac8b7e471e4c82693}{update} ()
+\begin{DoxyCompactList}\small\item\em Refreshes the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classViewer_a9fbefb9e0eed8433f3b830623a2aee90}{}const std\+::string \hyperlink{classViewer_a9fbefb9e0eed8433f3b830623a2aee90}{name}\label{classViewer_a9fbefb9e0eed8433f3b830623a2aee90}
+
+\begin{DoxyCompactList}\small\item\em Read-\/only window name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classViewer}{Viewer} class. 
+
+Extends cv\+::\+Mat. \begin{DoxyWarning}{Warning}
+Window name must N\+O\+T be the same as another window name within this application. 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classViewer_aaedebacb31cba87de6e7d448ed8d6586}{}\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\subsubsection[{Viewer}]{\setlength{\rightskip}{0pt plus 5cm}Viewer\+::\+Viewer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classViewer_aaedebacb31cba87de6e7d448ed8d6586}
+
+
+\hyperlink{classViewer}{Viewer} constructor. 
+
+Uses \char`\"{}out\char`\"{} as the window na,e \hypertarget{classViewer_af90638063a06dff8f3b020b272216aaf}{}\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\subsubsection[{Viewer}]{\setlength{\rightskip}{0pt plus 5cm}Viewer\+::\+Viewer (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{win\+Name}
+\end{DoxyParamCaption}
+)}\label{classViewer_af90638063a06dff8f3b020b272216aaf}
+
+
+\hyperlink{classViewer}{Viewer} constructor with window name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win\+Name} & Titlebar/name of window. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classViewer_a41ffe49f44a4f8fe52cec93c69273ada}{}\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\index{Viewer@{Viewer}!Viewer@{Viewer}}
+\subsubsection[{Viewer}]{\setlength{\rightskip}{0pt plus 5cm}Viewer\+::\+Viewer (
+\begin{DoxyParamCaption}
+\item[{const Mat \&}]{orig, }
+\item[{std\+::string}]{win\+Name}
+\end{DoxyParamCaption}
+)}\label{classViewer_a41ffe49f44a4f8fe52cec93c69273ada}
+
+
+\hyperlink{classViewer}{Viewer} constructor with reference cv\+::\+Mat and window name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & Const cv\+::\+Mat reference to use for the source. \\
+\hline
+{\em win\+Name} & Titlebar/name of window. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classViewer_a7122ce13ef7b396ac8b7e471e4c82693}{}\index{Viewer@{Viewer}!update@{update}}
+\index{update@{update}!Viewer@{Viewer}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Viewer\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classViewer_a7122ce13ef7b396ac8b7e471e4c82693}
+
+
+Refreshes the window. 
+
+Data is taken from the inherited cv\+::\+Mat. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Viewer_8h}{Viewer.\+h}\item 
+Viewer.\+cpp\end{DoxyCompactItemize}
