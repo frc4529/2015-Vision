@@ -2,6 +2,9 @@
  * File:   Viewer.h
  * Author: silvea
  *
+ * UNUSED IN LIBRArY
+ * Serves as an easy-to-use viewer window for demos (see viewerDemo branch)
+ *
  * Created on 26 January 2015, 2:18 PM
  */
 

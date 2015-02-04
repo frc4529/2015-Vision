@@ -2,6 +2,8 @@
  * File:   CamFeed.h
  * Author: silvea
  *
+ * Feed input (a slightly modified OpenCV VideoCapture with fixed properties)
+ *
  * Created on 26 January 2015, 1:57 PM
  */
 

@@ -2,6 +2,10 @@
  * File:   VisionLib.h
  * Author: silvea
  *
+ * Main lib header
+ * PLEASE NOTE - more externs/exports are in TargetDetector.h
+ * They are used internally there, but are returned by the library
+ *
  * Created on 1 February 2015, 1:27 PM
  */
 
@@ -23,6 +27,7 @@ public:
 #ifdef __cplusplus
 extern "C" {
 #endif
+
     instanceStore * initFeed(const char * feedPath);
     instanceStore * initCamera(int camIndex);
     LineResult processFrame(instanceStore *);

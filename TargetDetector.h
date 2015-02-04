@@ -2,6 +2,8 @@
  * File:   targetDetector.h
  * Author: silvea
  *
+ * Main target detection
+ *
  * Created on 26 January 2015, 4:01 PM
  */
 
@@ -21,9 +23,9 @@ extern "C" {
 #endif
 
 enum rotation_t {
-NONE,
-CLOCKWISE,
-ANTICLOCKWISE
+    NONE,
+    CLOCKWISE,
+    ANTICLOCKWISE
 };
 
 typedef struct LineResult {
@@ -42,10 +44,10 @@ class TargetDetector {
 public:
     TargetDetector(Mat &_image);
     virtual ~TargetDetector();
-    void prepareImage();
-    void findContours();
-    bool filterContours();
-    LineResult getContours();
+    void prepareImage(); // Prepare image for processing (convert to binary image)
+    void findContours(); // Get base contours from binary image
+    bool filterContours(); // Check and eliminate invalid contours - if this returns false, this frame doesn't contain the target
+    LineResult getContours(); // Process the found good contours and return them
     
 private:
     Mat &image;

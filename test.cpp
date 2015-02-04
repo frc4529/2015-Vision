@@ -1,15 +1,16 @@
+/* 
+ * File:   test.cpp
+ * Author: silvea
+ *
+ * C++ demo of lib usage
+ *
+ * Created on 1 February 2015, 2:32 PM
+ */
+
 #include "VisionLib.h"
 #include "stdio.h"
 
 using namespace std;
-
-/*typedef struct LineResult {
-    bool isProcessed, isGood;
-    float xPos;
-    int width;
-    rotation_t rotation;
-    
-} LineResult;*/
 
 int main() {
 	//instanceStore * store = initCamera(0);

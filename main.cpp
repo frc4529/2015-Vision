@@ -2,6 +2,9 @@
  * File:   main.cpp
  * Author: silvea
  *
+ * UNUSED IN LIB, NOW OUTDATED/BROKEN
+ * Used/working in viewerDemo branch
+ *
  * Created on 26 January 2015, 1:55 PM
  */
 
