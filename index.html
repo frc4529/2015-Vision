@@ -81,14 +81,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">libVision Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#about">About this project</a><ul><li class="level2"><a href="#download">Download</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#instructions">Using the library</a><ul><li class="level2"><a href="#installation">Getting the library</a><ul><li class="level3"><a href="#compile">Manual compilation</a></li>
+<li class="level3"><a href="#lazyass">Using a pre-compiled binary</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#usage">Using the library</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="textblock"><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">Fix Makefile </p>
-<p>Add project description to main page </p>
-<p class="enddd">Add instructions to main page </p>
+<p>Add release binaries to releases </p>
+<p>Add project description to main page</p><ul>
+<li>Finish the description of the project </li>
+</ul>
+<p class="enddd">Add instructions to main page</p><ul>
+<li>Finish compilation instructions</li>
+<li>Add usage instructions</li>
+</ul>
 </dd></dl>
+<h1><a class="anchor" id="about"></a>
+About this project</h1>
+<p>This is <a href="http://ai-robotics.com.au/">FRC team 4529</a>'s vision system, built by Andrew Silver. <br />
+ It is built in C++, and uses OpenCV 2.4 (<a href="http://opencv.org/">http://opencv.org/</a>).</p>
+<h2><a class="anchor" id="download"></a>
+Download</h2>
+<p><a href="https://github.com/frc4529/2015-Vision">https://github.com/frc4529/2015-Vision</a></p>
+<h1><a class="anchor" id="instructions"></a>
+Using the library</h1>
+<h2><a class="anchor" id="installation"></a>
+Getting the library</h2>
+<p>You can either:</p><ul>
+<li>(Fast/Newbie) Download a pre-compiled binary - <a class="el" href="index.html#lazyass">Using a pre-compiled binary</a></li>
+<li>(Slow/Veteran) Manually compile the library - <a class="el" href="index.html#compile">Manual compilation</a> </li>
+</ul>
+<h3><a class="anchor" id="compile"></a>
+Manual compilation</h3>
+<ol type="1">
+<li>Download/setup OpenCV 2.4.10 from <a href="http://opencv.org/downloads.html">http://opencv.org/downloads.html</a> <dl class="section attention"><dt>Attention</dt><dd>Do <b>NOT</b> use 3.x, as the library is not currently compatable! <br />
+ If you wish to port it yourself, feel free! </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you want to use this for the RoboRIO, you will need to compile OpenCV from source. </dd>
+<dd>
+Modify the ARM toolchain that comes with OpenCV, and use cmake - DO <b>NOT</b> USE frcmake! <br />
+ Instead, check the contents of the toolchain file it uses, and incorperate the changes into the OpenCV ARM toolchain.</dd></dl>
+</li>
+<li>Clone the library source source. <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;$ git clone https://github.com/frc4529/2015-Vision.git</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;$ cd 2015-Vision/</div>
+</div><!-- fragment --></li>
+<li>Compile the code <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;$ make lib/strip</div>
+</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>frcmake will NOT work with this. frcmake is a cmake wrapper, we do not use cmake.</dd></dl>
+</li>
+<li>Move on to <a class="el" href="index.html#usage">Using the library</a></li>
+</ol>
+<h3><a class="anchor" id="lazyass"></a>
+Using a pre-compiled binary</h3>
+<ol type="1">
+<li>Go to <a href="https://github.com/frc4529/2015-Vision/releases">https://github.com/frc4529/2015-Vision/releases</a> and download the latest release.</li>
+<li>Move on to <a class="el" href="index.html#usage">Using the library</a></li>
+</ol>
+<h2><a class="anchor" id="usage"></a>
+Using the library</h2>
+<p>TODO</p>
+<dl class="section author"><dt>Author</dt><dd>Andrew Silver - <a href="https://github.com/Silvea12/">https://github.com/Silvea12/</a> </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 5 2015 15:57:34 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 5 2015 17:50:36 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
