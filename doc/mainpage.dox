@@ -1,5 +1,53 @@
-/** @mainpage
+/**
+ *  @mainpage
  *  @todo Fix Makefile
+ *  @todo Add release binaries to releases
  *  @todo Add project description to main page
+ *  - Finish the description of the project
  *  @todo Add instructions to main page
+ *  - Finish compilation instructions
+ *  - Add usage instructions
+ *
+ *  @tableofcontents
+ *  @section about About this project
+ *  This is <a href="http://ai-robotics.com.au/">FRC team 4529</a>'s vision system, built by Andrew Silver.
+ *  @n It is built in C++, and uses OpenCV 2.4 (http://opencv.org/).
+ *
+ *  @subsection download Download
+ *  https://github.com/frc4529/2015-Vision
+ *
+ *  @section instructions Using the library
+ *  @subsection installation Getting the library
+ *  You can either:
+ *  - (Fast/Newbie) Download a pre-compiled binary - @ref lazyass
+ *  - (Slow/Veteran) Manually compile the library  - @ref compile
+ *  @subsubsection compile Manual compilation
+ *  -# Download/setup OpenCV 2.4.10 from http://opencv.org/downloads.html
+ *  @attention Do @b NOT use 3.x, as the library is not currently compatable!
+ *  @n If you wish to port it yourself, feel free!
+ *  @note If you want to use this for the RoboRIO, you will need to compile OpenCV from source.
+ *  @note Modify the ARM toolchain that comes with OpenCV, and use cmake - DO @b NOT USE frcmake!
+ *  @n Instead, check the contents of the toolchain file it uses, and incorperate the changes into the OpenCV ARM toolchain.
+ *
+ *  -# Clone the library source source.
+ *  @code{.sh}
+ *  $ git clone https://github.com/frc4529/2015-Vision.git
+ *  $ cd 2015-Vision/
+ *  @endcode
+ *
+ *  -# Compile the code
+ *  @code{.sh}
+ *  $ make lib/strip
+ *  @endcode
+ *  @note frcmake will NOT work with this. frcmake is a cmake wrapper, we do not use cmake.
+ *  -# Move on to @ref usage
+ *
+ *  @subsubsection lazyass Using a pre-compiled binary
+ *  -# Go to https://github.com/frc4529/2015-Vision/releases and download the latest release.
+ *  -# Move on to @ref usage
+ *
+ *  @subsection usage Using the library
+ *  TODO
+ *
+ *  @author Andrew Silver - https://github.com/Silvea12/
  */
