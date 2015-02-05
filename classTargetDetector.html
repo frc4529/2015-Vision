@@ -206,11 +206,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>Process and retrieve resulting contours. </p>
 <p>Processes filtered contours, returning more specific information about the found target. </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="structLineResult.html" title="Result returned from TargetDetector::getContours() ">LineResult</a> contour data </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If this was run already on the current frame, it will instantly return the previous result. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>If there was an issue with the frame, it will return instantly with <a class="el" href="structLineResult.html#a6f6cdb0eaa8db8be8cd08bc3cd3aace0" title="If there was a fatal issue with capturing/processing the frame. ">LineResult::isProcessed</a> being false, and all other values being old or random data. </dd>
-<dd>
-In this case, you MUST close and attempt to re-open the camera or feed to be able to get a good frame again. </dd>
-<dd>
-You will NOT be able to get any more data otherwise. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If there was an issue with the frame, it will return instantly with <a class="el" href="structLineResult.html#a6f6cdb0eaa8db8be8cd08bc3cd3aace0" title="If there was a fatal issue with capturing/processing the frame. ">LineResult::isProcessed</a> being false, and all other values being old or random data. <br />
+ In this case, you MUST close and attempt to re-open the camera or feed to be able to get a good frame again. <br />
+ You will NOT be able to get any more data otherwise. </dd></dl>
 
 </div>
 </div>
@@ -239,7 +237,7 @@ You will NOT be able to get any more data otherwise. </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 5 2015 17:50:36 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 6 2015 10:38:18 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
