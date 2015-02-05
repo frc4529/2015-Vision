@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rotation',['rotation',['../structLineResult.html#a840b6b2aab3009238f1520a84093f8b1',1,'LineResult']]],
-  ['rotation_5ft',['rotation_t',['../TargetDetector_8h.html#af89160be273160865e8cd55ebc682736',1,'TargetDetector.h']]]
+  ['prepareimage',['prepareImage',['../classTargetDetector.html#a8b4cef93d34684fae9bec516d49314a6',1,'TargetDetector']]],
+  ['processframe',['processFrame',['../VisionLib_8h.html#ae02b487f58038c845b1fc96510d18521',1,'VisionLib.cpp']]]
 ];
