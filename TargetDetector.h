@@ -90,8 +90,8 @@ public:
      *  @returns LineResult contour data
      *  @note If this was run already on the current frame, it will instantly return the previous result.
      *  @warning If there was an issue with the frame, it will return instantly with LineResult::isProcessed being false, and all other values being old or random data.
-     *  @warning In this case, you MUST close and attempt to re-open the camera or feed to be able to get a good frame again.
-     *  @warning You will NOT be able to get any more data otherwise.
+     *  @n In this case, you MUST close and attempt to re-open the camera or feed to be able to get a good frame again.
+     *  @n You will NOT be able to get any more data otherwise.
      */
     LineResult getContours();
     
