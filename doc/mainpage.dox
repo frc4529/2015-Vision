@@ -13,7 +13,8 @@
  *  This is <a href="http://ai-robotics.com.au/">FRC team 4529</a>'s vision system, built by Andrew Silver.
  *  @n It is built in C++, and uses OpenCV 2.4 (http://opencv.org/).
  *  @n It is very high performance, reliable, is platform-independant, and is simple to use in C, C++ and Java. It can run on both the driver station, <b>and even on the RoboRIO itself!</b>
- *  @n The system will pick up the tote markers from an image, and will report the center X position of the marker, along with the rotation direction and the total width of the detected area (including space in between)
+ *  @n The system will pick up the tote markers from a frame source, and will report the center X position of the marker, along with the rotation direction and the total width of the detected area (including space in between).
+ *  @image html VisionRepresentation.svg "Vision Representation"
  *  @see rotation_t Rotation direction
  *  @see LineResult Output data from the vision system
  *
