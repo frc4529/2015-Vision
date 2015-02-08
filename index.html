@@ -109,7 +109,11 @@ About this project</h1>
 <p>This is <a href="http://ai-robotics.com.au/">FRC team 4529</a>'s vision system, built by Andrew Silver. <br />
  It is built in C++, and uses OpenCV 2.4 (<a href="http://opencv.org/">http://opencv.org/</a>). <br />
  It is very high performance, reliable, is platform-independant, and is simple to use in C, C++ and Java. It can run on both the driver station, <b>and even on the RoboRIO itself!</b> <br />
- The system will pick up the tote markers from an image, and will report the center X position of the marker, along with the rotation direction and the total width of the detected area (including space in between) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736" title="Rotation direction. ">rotation_t</a> Rotation direction </dd>
+ The system will pick up the tote markers from a frame source, and will report the center X position of the marker, along with the rotation direction and the total width of the detected area (including space in between). </p><div class="image">
+<img src="VisionRepresentation.svg" alt="VisionRepresentation.svg"/>
+<div class="caption">
+Vision Representation</div></div>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736" title="Rotation direction. ">rotation_t</a> Rotation direction </dd>
 <dd>
 <a class="el" href="structLineResult.html" title="Result returned from TargetDetector::getContours() ">LineResult</a> Output data from the vision system</dd></dl>
 <h2><a class="anchor" id="download"></a>
@@ -157,7 +161,7 @@ Using the library</h2>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 6 2015 10:38:18 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 8 2015 17:48:13 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
