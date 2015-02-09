@@ -7,6 +7,7 @@
  *  @todo Add instructions to main page
  *  - Finish compilation instructions
  *  - Add usage instructions
+ *  - Add example code in C++ and Java
  *
  *  @tableofcontents
  *  @section about About this project
@@ -22,7 +23,7 @@
  *  - Source: https://github.com/frc4529/2015-Vision
  *  - OpenCV: http://opencv.org/downloads.html
  *
- *  @section instructions Using the library
+ *  @section instructions Setting up the library
  *  @subsection installation Getting the library
  *  You can either:
  *  - (Fast/Newbie) Download a pre-compiled binary - @ref lazyass
@@ -52,8 +53,17 @@
  *  -# Go to https://github.com/frc4529/2015-Vision/releases and download the latest release.
  *  -# Move on to @ref usage
  *
- *  @subsection usage Using the library
- *  TODO
+ *  @section usage Using the library
+ *  @subsection cppUsage C++ usage
+ *  @subsubsection cppRoborio C++ on the RoboRIO
+ *  See the example code for usage.
+ *  @subsubsection cppDS C++ on the driver station
+ *  See the example code for usage.
+ *  @subsection javaUsage Java usage
+ *  @subsubsection javaRoborio Java on the RoboRIO
+ *  See the example code for usage.
+ *  @subsubsection javaDS Java on the driver station
+ *  See the example code for usage.
  *
  *  @author Andrew Silver - https://github.com/Silvea12/
  */
