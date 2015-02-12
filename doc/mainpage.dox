@@ -61,6 +61,21 @@
  *  See the example code for usage.
  *  @subsection javaUsage Java usage
  *  @subsubsection javaRoborio Java on the RoboRIO
+ *  To have the code compile in eclipse, add this to the end of your project's build.properties file (open with a text editor):
+ *  @code{.properties}
+ *  wpilib=${user.home}/wpilib/java/${version}
+ *  wpilib.lib=${wpilib}/lib
+ *  wpilib.jar=${wpilib.lib}/WPILib.jar
+ *  networktables.jar=${wpilib.lib}/NetworkTables.jar
+ *  jna.jar=/full/path/to/jna.jar
+ *  classpath=${wpilib.jar}:${networktables.jar}:${jna.jar}
+ *  @endcode
+ *  Change the @b jna.jar property (line 5) to the full path of the jna.jar file.
+ *  @n For Windows, include the drive letter in the path for jna.jar - and ONLY jna.jar (E.g. @a "C:/path/to/jnalib.jar")
+ *  @note If the project doesn't compile, reporting multiple errors similar to "Cannot find symbol" relating to Pointer, PointerType, jna, etc, you have set the path to the jar incorrectly.
+ *  @note The file will most likely not be called jnalib.jar or jna.jar. Most of the time it is named jna-x.x.x.jar
+ *  @attention Ensure you have set the @b FULL path to the JNA jar file, and you have included the full filename including the extension.
+ *
  *  See the example code for usage.
  *  @subsubsection javaDS Java on the driver station
  *  See the example code for usage.
