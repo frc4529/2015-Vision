@@ -178,6 +178,17 @@ C++ on the driver station</h3>
 Java usage</h2>
 <h3><a class="anchor" id="javaRoborio"></a>
 Java on the RoboRIO</h3>
+<p>To have the code compile in eclipse, add this to the end of your project's build.properties file (open with a text editor): </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;wpilib=${user.home}/wpilib/java/${version}</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;wpilib.lib=${wpilib}/lib</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;wpilib.jar=${wpilib.lib}/WPILib.jar</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;networktables.jar=${wpilib.lib}/NetworkTables.jar</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;jna.jar=/full/path/to/jna.jar</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;classpath=${wpilib.jar}:${networktables.jar}:${jna.jar}</div>
+</div><!-- fragment --><p> Change the <b>jna.jar</b> property (line 5) to the full path of the jna.jar file. <br />
+ For Windows, include the drive letter in the path for jna.jar - and ONLY jna.jar (E.g. <em>"C:/path/to/jnalib.jar"</em>) </p><dl class="section note"><dt>Note</dt><dd>If the project doesn't compile, reporting multiple errors similar to "Cannot find symbol" relating to Pointer, PointerType, jna, etc, you have set the path to the jar incorrectly. </dd>
+<dd>
+The file will most likely not be called jnalib.jar or jna.jar. Most of the time it is named jna-x.x.x.jar </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Ensure you have set the <b>FULL</b> path to the JNA jar file, and you have included the full filename including the extension.</dd></dl>
 <p>See the example code for usage. </p>
 <h3><a class="anchor" id="javaDS"></a>
 Java on the driver station</h3>
@@ -186,7 +197,7 @@ Java on the driver station</h3>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 9 2015 11:04:12 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 13 2015 10:54:31 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
