@@ -3,10 +3,6 @@
  *  @todo Add release binaries to releases
  *  @todo Add project description to main page
  *  - Finish the description of the project
- *  @todo Add instructions to main page
- *  - Finish compilation instructions
- *  - Add usage instructions
- *  - Add example code in Java
  *
  *  @tableofcontents
  *  @section about About this project
@@ -75,9 +71,11 @@
  *  @note The file will most likely not be called jnalib.jar or jna.jar. Most of the time it is named jna-x.x.x.jar
  *  @attention Ensure you have set the @b FULL path to the JNA jar file, and you have included the full filename including the extension.
  *
- *  See the example code for usage.
+ *  Move on to step 1 of @ref javaDS
  *  @subsubsection javaDS Java on the driver station
- *  Include [URL to java header], set [insert path here] to the path to the library, and see [upload example java code] for usage.
+ *  -# Include https://github.com/frc4529/2015-Vision/blob/master/pikavision/PikaVisionLibrary.java and https://github.com/frc4529/2015-Vision/blob/master/pikavision/LineResult.java
+ *  -# Set JNA_LIBRARY_NAME on line 15 to the path to the library.
+ *  -# See https://github.com/frc4529/2015-Vision/blob/master/pikavision/test.java for usage.
  *
  *  @author Andrew Silver - https://github.com/Silvea12/
  */
