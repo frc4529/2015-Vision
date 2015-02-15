@@ -23,6 +23,17 @@ InstanceStore * initCamera(int camIndex)
     return new InstanceStore(feed);
 }
 
+bool setThreshold(InstanceStore * store, int newThreshold)
+{
+    if (store == NULL || newThreshold < 0 || newThreshold > 255)
+        return false;
+    else
+    {
+        store->detector->thresholdVal = newThreshold;
+        return true;
+    }
+}
+
 LineResult processFrame(InstanceStore * store)
 {
     

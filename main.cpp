@@ -18,7 +18,7 @@ using namespace std;
 /*
  * 
  */
-int main() {
+int main1() {
     CamFeed cam("/home/silvea/Documents/Robotics/2015/OpenCV/sampleVideo/out.flv");
     
     if (!cam.isOpened())

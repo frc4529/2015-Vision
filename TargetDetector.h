@@ -94,6 +94,12 @@ public:
      *  @n You will NOT be able to get any more data otherwise.
      */
     LineResult getContours();
+    /**
+     *  Threshold value for cuttoff when running prepareImage.
+     *  Set by setThreshold().
+     *  @note Defaults to 234.
+     */
+    int thresholdVal;
     
 private:
     Mat &image;

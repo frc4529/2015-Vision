@@ -11,7 +11,7 @@
 
 using namespace std;
 
-TargetDetector::TargetDetector(Mat &_image) : image(_image), shouldFilterContours(false) {
+TargetDetector::TargetDetector(Mat &_image) : image(_image), thresholdVal(234), shouldFilterContours(false) {
     result.isProcessed = false;
     result.isGood = false;
 }
@@ -20,7 +20,7 @@ void TargetDetector::prepareImage() {
     cvtColor(image, image, CV_BGR2GRAY);
     // The value 234 may need to be adjusted depending on camera and lighting conditions
     // Try to have this value as close to 255 as possible, while still being able to detect the targets at an adequate distance
-    threshold(image, image, 234, 255, THRESH_BINARY);
+    threshold(image, image, thresholdVal, 255, THRESH_BINARY);
 }
 
 void TargetDetector::findContours() {

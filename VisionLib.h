@@ -57,6 +57,16 @@ InstanceStore * initFeed(const char * feedPath);
  */
 InstanceStore * initCamera(int camIndex);
 /**
+ *  Sets the thresholding cuttoff value.
+ *  If not run, the value will default to 234.
+ *  @param store Pointer to the store returned by initFeed() or initCamera().
+ *  @param newThreshold The new threshold value - takes values 0-255 (inclusive).
+ *  @returns true if operation was successful, false if newThreshold was invalid or if store is null.
+ *  @note Try to have this as close to 255 as possible while still being able to detect the target reliably.
+ *  @note Can be changed multiple times.
+ */
+bool setThreshold(InstanceStore * store, int newThreshold);
+/**
  *  Process a new frame for vision.
  *  @param store Pointer to the store returned by initFeed() or initCamera().
  *  @returns LineResult Output of vision system.
