@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update',['update',['../classViewer.html#a7122ce13ef7b396ac8b7e471e4c82693',1,'Viewer']]]
+  ['targetdetector',['TargetDetector',['../classTargetDetector.html#a4ce81814e5632f0d7b61dffde298ba3d',1,'TargetDetector']]]
 ];

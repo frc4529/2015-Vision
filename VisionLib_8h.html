@@ -112,6 +112,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a68e6e456df8302c3738ae41597e2ec95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstanceStore.html">InstanceStore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VisionLib_8h.html#a68e6e456df8302c3738ae41597e2ec95">initCamera</a> (int camIndex)</td></tr>
 <tr class="memdesc:a68e6e456df8302c3738ae41597e2ec95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the vision system with a USB camera.  <a href="#a68e6e456df8302c3738ae41597e2ec95">More...</a><br /></td></tr>
 <tr class="separator:a68e6e456df8302c3738ae41597e2ec95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f41f8725a126d5a19cb7a36e65d3737"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VisionLib_8h.html#a2f41f8725a126d5a19cb7a36e65d3737">setThreshold</a> (<a class="el" href="classInstanceStore.html">InstanceStore</a> *store, int newThreshold)</td></tr>
+<tr class="memdesc:a2f41f8725a126d5a19cb7a36e65d3737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the thresholding cuttoff value.  <a href="#a2f41f8725a126d5a19cb7a36e65d3737">More...</a><br /></td></tr>
+<tr class="separator:a2f41f8725a126d5a19cb7a36e65d3737"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae02b487f58038c845b1fc96510d18521"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLineResult.html">LineResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="VisionLib_8h.html#ae02b487f58038c845b1fc96510d18521">processFrame</a> (<a class="el" href="classInstanceStore.html">InstanceStore</a> *store)</td></tr>
 <tr class="memdesc:ae02b487f58038c845b1fc96510d18521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a new frame for vision.  <a href="#ae02b487f58038c845b1fc96510d18521">More...</a><br /></td></tr>
 <tr class="separator:ae02b487f58038c845b1fc96510d18521"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,10 +227,49 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2f41f8725a126d5a19cb7a36e65d3737"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setThreshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classInstanceStore.html">InstanceStore</a> *&#160;</td>
+          <td class="paramname"><em>store</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>newThreshold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the thresholding cuttoff value. </p>
+<p>If not run, the value will default to 234. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">store</td><td>Pointer to the store returned by <a class="el" href="VisionLib_8h.html#a101edfd3fca2375f5c2c513ae72a58b3" title="Starts the vision system from a feed path. ">initFeed()</a> or <a class="el" href="VisionLib_8h.html#a68e6e456df8302c3738ae41597e2ec95" title="Starts the vision system with a USB camera. ">initCamera()</a>. </td></tr>
+    <tr><td class="paramname">newThreshold</td><td>The new threshold value - takes values 0-255 (inclusive). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if operation was successful, false if newThreshold was invalid or if store is null. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Try to have this as close to 255 as possible while still being able to detect the target reliably. </dd>
+<dd>
+Can be changed multiple times. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 13 2015 10:54:31 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 15 2015 12:32:37 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

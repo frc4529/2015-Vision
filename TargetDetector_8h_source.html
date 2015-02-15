@@ -129,18 +129,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> findContours();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> filterContours(); <span class="comment">// Check and eliminate invalid contours - if this returns false, this frame doesn&#39;t contain the target</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"></span>    <a class="code" href="structLineResult.html">LineResult</a> getContours();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    Mat &amp;image;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    vector&lt;vector&lt;Point&gt; &gt; contours, validContours;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    vector&lt;Vec4i&gt; hierarchy;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="structLineResult.html">LineResult</a> result;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">bool</span> shouldFilterContours;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* TARGETDETECTOR_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classTargetDetector.html#ae930044af0462340ad4305d3a5355622">  102</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classTargetDetector.html#ae930044af0462340ad4305d3a5355622">thresholdVal</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    Mat &amp;image;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    vector&lt;vector&lt;Point&gt; &gt; contours, validContours;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    vector&lt;Vec4i&gt; hierarchy;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="structLineResult.html">LineResult</a> result;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> shouldFilterContours;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* TARGETDETECTOR_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="ttc" id="structLineDetails_html_acc411b6f69225d2b26c003f23a8e9a83"><div class="ttname"><a href="structLineDetails.html#acc411b6f69225d2b26c003f23a8e9a83">LineDetails::xPos</a></div><div class="ttdeci">int xPos</div><div class="ttdoc">The X position of the start point of the line. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:18</div></div>
 <div class="ttc" id="structLineResult_html_afe3f6449af1416355e8209c7fe95359e"><div class="ttname"><a href="structLineResult.html#afe3f6449af1416355e8209c7fe95359e">LineResult::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">Combined width of the bounding boxes of the targets. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:43</div></div>
 <div class="ttc" id="classTargetDetector_html"><div class="ttname"><a href="classTargetDetector.html">TargetDetector</a></div><div class="ttdoc">Vision processing/target acquisition code. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:60</div></div>
@@ -151,13 +152,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structLineResult_html"><div class="ttname"><a href="structLineResult.html">LineResult</a></div><div class="ttdoc">Result returned from TargetDetector::getContours() </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:38</div></div>
 <div class="ttc" id="TargetDetector_8h_html_af89160be273160865e8cd55ebc682736a5c33a14784ab1d58c4c9c881b36b94c7"><div class="ttname"><a href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736a5c33a14784ab1d58c4c9c881b36b94c7">ANTICLOCKWISE</a></div><div class="ttdoc">Rotated anticlockwise. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:30</div></div>
 <div class="ttc" id="structLineResult_html_a1532cc6c0b0f211cba440eb0ed46f0d0"><div class="ttname"><a href="structLineResult.html#a1532cc6c0b0f211cba440eb0ed46f0d0">LineResult::xPos</a></div><div class="ttdeci">float xPos</div><div class="ttdoc">Centeral X position of the target. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:42</div></div>
+<div class="ttc" id="classTargetDetector_html_ae930044af0462340ad4305d3a5355622"><div class="ttname"><a href="classTargetDetector.html#ae930044af0462340ad4305d3a5355622">TargetDetector::thresholdVal</a></div><div class="ttdeci">int thresholdVal</div><div class="ttdoc">Threshold value for cuttoff when running prepareImage. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:102</div></div>
 <div class="ttc" id="structLineDetails_html"><div class="ttname"><a href="structLineDetails.html">LineDetails</a></div><div class="ttdoc">For comparison of lines. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:17</div></div>
 <div class="ttc" id="TargetDetector_8h_html_af89160be273160865e8cd55ebc682736ac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdoc">Not rotated. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:31</div></div>
 <div class="ttc" id="TargetDetector_8h_html_ac10fe7fc8989be0fdc2d4f50de25a346"><div class="ttname"><a href="TargetDetector_8h.html#ac10fe7fc8989be0fdc2d4f50de25a346">LineResult</a></div><div class="ttdeci">struct LineResult LineResult</div><div class="ttdoc">Result returned from TargetDetector::getContours() </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 13 2015 10:54:31 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 15 2015 12:32:37 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
