@@ -104,13 +104,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 </div>
 <div class="textblock"><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">Add release binaries to releases </p>
-<p>Add project description to main page</p><ul>
-<li>Finish the description of the project </li>
-</ul>
-<p class="enddd">Add instructions to main page</p><ul>
-<li>Finish compilation instructions</li>
-<li>Add usage instructions</li>
-<li>Add example code in Java</li>
+<p class="enddd">Add project description to main page</p><ul>
+<li>Finish the description of the project</li>
 </ul>
 </dd></dl>
 <h1><a class="anchor" id="about"></a>
@@ -188,15 +183,19 @@ Java on the RoboRIO</h3>
 <dd>
 The file will most likely not be called jnalib.jar or jna.jar. Most of the time it is named jna-x.x.x.jar </dd></dl>
 <dl class="section attention"><dt>Attention</dt><dd>Ensure you have set the <b>FULL</b> path to the JNA jar file, and you have included the full filename including the extension.</dd></dl>
-<p>See the example code for usage. </p>
+<p>Move on to step 1 of <a class="el" href="index.html#javaDS">Java on the driver station</a> </p>
 <h3><a class="anchor" id="javaDS"></a>
 Java on the driver station</h3>
-<p>Include [URL to java header], set [insert path here] to the path to the library, and see [upload example java code] for usage.</p>
+<ol type="1">
+<li>Include <a href="https://github.com/frc4529/2015-Vision/blob/master/pikavision/PikaVisionLibrary.java">https://github.com/frc4529/2015-Vision/blob/master/pikavision/PikaVisionLibrary.java</a> and <a href="https://github.com/frc4529/2015-Vision/blob/master/pikavision/LineResult.java">https://github.com/frc4529/2015-Vision/blob/master/pikavision/LineResult.java</a></li>
+<li>Set JNA_LIBRARY_NAME on line 15 to the path to the library.</li>
+<li>See <a href="https://github.com/frc4529/2015-Vision/blob/master/pikavision/test.java">https://github.com/frc4529/2015-Vision/blob/master/pikavision/test.java</a> for usage.</li>
+</ol>
 <dl class="section author"><dt>Author</dt><dd>Andrew Silver - <a href="https://github.com/Silvea12/">https://github.com/Silvea12/</a> </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 15 2015 17:39:05 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 15 2015 17:52:35 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
