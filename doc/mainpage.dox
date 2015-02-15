@@ -1,13 +1,12 @@
 /**
  *  @mainpage
- *  @todo Fix Makefile
  *  @todo Add release binaries to releases
  *  @todo Add project description to main page
  *  - Finish the description of the project
  *  @todo Add instructions to main page
  *  - Finish compilation instructions
  *  - Add usage instructions
- *  - Add example code in C++ and Java
+ *  - Add example code in Java
  *
  *  @tableofcontents
  *  @section about About this project
@@ -56,9 +55,9 @@
  *  @section usage Using the library
  *  @subsection cppUsage C++ usage
  *  @subsubsection cppRoborio C++ on the RoboRIO
- *  See the example code for usage.
+ *  See https://github.com/frc4529/2015-Vision/blob/master/test.cpp for usage.
  *  @subsubsection cppDS C++ on the driver station
- *  See the example code for usage.
+ *  See https://github.com/frc4529/2015-Vision/blob/master/test.cpp for usage.
  *  @subsection javaUsage Java usage
  *  @subsubsection javaRoborio Java on the RoboRIO
  *  To have the code compile in eclipse, add this to the end of your project's build.properties file (open with a text editor):
@@ -78,7 +77,7 @@
  *
  *  See the example code for usage.
  *  @subsubsection javaDS Java on the driver station
- *  See the example code for usage.
+ *  Include [URL to java header], set [insert path here] to the path to the library, and see [upload example java code] for usage.
  *
  *  @author Andrew Silver - https://github.com/Silvea12/
  */

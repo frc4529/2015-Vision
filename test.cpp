@@ -13,7 +13,7 @@
 using namespace std;
 
 int main() {
-	//InstanceStore * store = initCamera(0);
+	//InstanceStore * store = initCamera(1);
 	InstanceStore * store = initFeed("/home/silvea/Documents/Robotics/2015/OpenCV/sampleVideo/out.flv");
         if (!setThreshold(store, 234)) // Is optional
             return 1;
