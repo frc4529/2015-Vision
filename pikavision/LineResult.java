@@ -13,9 +13,9 @@ public class LineResult extends Structure {
 	public byte isProcessed;
 	/** < If there was a fatal issue with capturing/processing the frame. */
 	public byte isGood;
-	/** < Centeral X position of the target. */
+	/** < Centeral X position of the target - goes from -100.0f to 100.0f, 0.0f being centered. */
 	public float xPos;
-	/** < Combined width of the bounding boxes of the targets. */
+	/** < Combined width of the bounding boxes of the targets - goes from 0.0f to 100.0f. */
 	public float width;
 	/**
 	 * @see rotation_t<br>
@@ -32,13 +32,13 @@ public class LineResult extends Structure {
 	/**
 	 * @param isProcessed < If there was a fatal issue with capturing/processing the frame.<br>
 	 * @param isGood < If there was a fatal issue with capturing/processing the frame.<br>
-	 * @param xPos < Centeral X position of the target.<br>
-	 * @param width < Combined width of the bounding boxes of the targets.<br>
+	 * @param xPos < Centeral X position of the target - goes from -100.0f to 100.0f, 0.0f being centered.<br>
+	 * @param width < Combined width of the bounding boxes of the targets - goes from 0.0f to 100.0f.<br>
 	 * @param rotation @see rotation_t<br>
 	 * < Rotation direction of the target.<br>
 	 * C type : rotation_t
 	 */
-	public LineResult(byte isProcessed, byte isGood, float xPos, int width, int rotation) {
+	public LineResult(byte isProcessed, byte isGood, float xPos, float width, int rotation) {
 		super();
 		this.isProcessed = isProcessed;
 		this.isGood = isGood;
