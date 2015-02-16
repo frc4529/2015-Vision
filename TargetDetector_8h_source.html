@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> isProcessed, </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         isGood; </div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structLineResult.html#a1532cc6c0b0f211cba440eb0ed46f0d0">   42</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structLineResult.html#a1532cc6c0b0f211cba440eb0ed46f0d0">xPos</a>; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structLineResult.html#afe3f6449af1416355e8209c7fe95359e">   43</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structLineResult.html#afe3f6449af1416355e8209c7fe95359e">width</a>; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structLineResult.html#aa609bc2c2b5d483aefb95c833567b313">   43</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="structLineResult.html#aa609bc2c2b5d483aefb95c833567b313">width</a>; </div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structLineResult.html#a840b6b2aab3009238f1520a84093f8b1">   45</a></span>&#160;    <a class="code" href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736">rotation_t</a> <a class="code" href="structLineResult.html#a840b6b2aab3009238f1520a84093f8b1">rotation</a>; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <a class="code" href="TargetDetector_8h.html#ac10fe7fc8989be0fdc2d4f50de25a346">LineResult</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
@@ -143,7 +143,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* TARGETDETECTOR_H */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="ttc" id="structLineDetails_html_acc411b6f69225d2b26c003f23a8e9a83"><div class="ttname"><a href="structLineDetails.html#acc411b6f69225d2b26c003f23a8e9a83">LineDetails::xPos</a></div><div class="ttdeci">int xPos</div><div class="ttdoc">The X position of the start point of the line. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:18</div></div>
-<div class="ttc" id="structLineResult_html_afe3f6449af1416355e8209c7fe95359e"><div class="ttname"><a href="structLineResult.html#afe3f6449af1416355e8209c7fe95359e">LineResult::width</a></div><div class="ttdeci">int width</div><div class="ttdoc">Combined width of the bounding boxes of the targets. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:43</div></div>
 <div class="ttc" id="classTargetDetector_html"><div class="ttname"><a href="classTargetDetector.html">TargetDetector</a></div><div class="ttdoc">Vision processing/target acquisition code. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:60</div></div>
 <div class="ttc" id="TargetDetector_8h_html_af89160be273160865e8cd55ebc682736a436e34ac11f92a71ed5b0c06a6cba180"><div class="ttname"><a href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736a436e34ac11f92a71ed5b0c06a6cba180">CLOCKWISE</a></div><div class="ttdoc">Rotated clockwise. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:32</div></div>
 <div class="ttc" id="TargetDetector_8h_html_af89160be273160865e8cd55ebc682736"><div class="ttname"><a href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736">rotation_t</a></div><div class="ttdeci">rotation_t</div><div class="ttdoc">Rotation direction. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:29</div></div>
@@ -151,6 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespacecv_html"><div class="ttname"><a href="namespacecv.html">cv</a></div></div>
 <div class="ttc" id="structLineResult_html"><div class="ttname"><a href="structLineResult.html">LineResult</a></div><div class="ttdoc">Result returned from TargetDetector::getContours() </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:38</div></div>
 <div class="ttc" id="TargetDetector_8h_html_af89160be273160865e8cd55ebc682736a5c33a14784ab1d58c4c9c881b36b94c7"><div class="ttname"><a href="TargetDetector_8h.html#af89160be273160865e8cd55ebc682736a5c33a14784ab1d58c4c9c881b36b94c7">ANTICLOCKWISE</a></div><div class="ttdoc">Rotated anticlockwise. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:30</div></div>
+<div class="ttc" id="structLineResult_html_aa609bc2c2b5d483aefb95c833567b313"><div class="ttname"><a href="structLineResult.html#aa609bc2c2b5d483aefb95c833567b313">LineResult::width</a></div><div class="ttdeci">float width</div><div class="ttdoc">Combined width of the bounding boxes of the targets - goes from 0.0f to 100.0f. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:43</div></div>
 <div class="ttc" id="structLineResult_html_a1532cc6c0b0f211cba440eb0ed46f0d0"><div class="ttname"><a href="structLineResult.html#a1532cc6c0b0f211cba440eb0ed46f0d0">LineResult::xPos</a></div><div class="ttdeci">float xPos</div><div class="ttdoc">Centeral X position of the target - goes from -100.0f to 100.0f, 0.0f being centered. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:42</div></div>
 <div class="ttc" id="classTargetDetector_html_ae930044af0462340ad4305d3a5355622"><div class="ttname"><a href="classTargetDetector.html#ae930044af0462340ad4305d3a5355622">TargetDetector::thresholdVal</a></div><div class="ttdeci">int thresholdVal</div><div class="ttdoc">Threshold value for cuttoff when running prepareImage. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:102</div></div>
 <div class="ttc" id="structLineDetails_html"><div class="ttname"><a href="structLineDetails.html">LineDetails</a></div><div class="ttdoc">For comparison of lines. </div><div class="ttdef"><b>Definition:</b> TargetDetector.h:17</div></div>
@@ -159,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 16 2015 21:00:04 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 16 2015 22:39:05 for libVision by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
