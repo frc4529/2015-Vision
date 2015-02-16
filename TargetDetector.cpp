@@ -169,7 +169,7 @@ LineResult TargetDetector::getContours()
                 result.rotation = CLOCKWISE;
         }
     }
-    result.xPos = (float)(minX + maxX - image.cols) / 2;
+    result.xPos = (float)(minX + maxX - image.cols) / (image.cols * 0.01);
     result.width = maxX - minX;
     return result;
 }
