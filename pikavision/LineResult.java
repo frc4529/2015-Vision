@@ -16,7 +16,7 @@ public class LineResult extends Structure {
 	/** < Centeral X position of the target. */
 	public float xPos;
 	/** < Combined width of the bounding boxes of the targets. */
-	public int width;
+	public float width;
 	/**
 	 * @see rotation_t<br>
 	 * < Rotation direction of the target.<br>

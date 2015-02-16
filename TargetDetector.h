@@ -40,7 +40,7 @@ typedef struct LineResult {
                       /**< @warning If this is false, you MUST close and re-open the camera, as you will not be able to get any more good frames. */
          isGood; /**< If the target found in the input frame. */
     float xPos; /**< Centeral X position of the target - goes from -100.0f to 100.0f, 0.0f being centered. */
-    int width; /**< Combined width of the bounding boxes of the targets. */
+    float width; /**< Combined width of the bounding boxes of the targets - goes from 0.0f to 100.0f. */
                /**< @note Includes space between the 2 bounding boxes of the found targets. */
     rotation_t rotation; /**< Rotation direction of the target. */
 } LineResult;

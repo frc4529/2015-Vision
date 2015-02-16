@@ -22,7 +22,7 @@ int main() {
 	{
 		if (result.isGood)
 		{
-			printf("X pos: %.2f, width: %d, rotation: %d\n", result.xPos, result.width, result.rotation);
+			printf("X pos: %.2f, width: %.2f, rotation: %d\n", result.xPos, result.width, result.rotation);
 		}
 		result = processFrame(store);
 	}

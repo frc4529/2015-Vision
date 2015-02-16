@@ -170,7 +170,7 @@ LineResult TargetDetector::getContours()
         }
     }
     result.xPos = (float)(minX + maxX - image.cols) / (image.cols * 0.01);
-    result.width = maxX - minX;
+    result.width = (float)(maxX - minX) / (image.cols * 0.01);
     return result;
 }
 
